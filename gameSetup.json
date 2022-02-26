@@ -1,0 +1,16 @@
+{
+    "site": "bkp515.com",
+    "gameCode": "",
+    "lands": [{
+        "name": "test land 1",
+        "owner": "abc",
+        "unitMax": 3
+    },
+    {
+        "name": "test land 2",
+        "owner": "cba",
+        "unitMax": 4
+    }
+    ],
+    "instructions": ["b - Build"]
+}

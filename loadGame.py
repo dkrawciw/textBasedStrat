@@ -1,6 +1,8 @@
 import json
 
-with open("test.json", 'r') as worldInformation:
-    gameInfo = json.load(worldInformation)
+with open("gameSetup.json", 'r') as worldInformation:
+    worldInfo = json.load(worldInformation)
+with open("playerInformation.json", "r") as playerInformation:
+    playerInfo = json.load(playerInformation)
 
-print(gameInfo)
+print(f'Welcome, {playerInfo["playerName"]}!')
