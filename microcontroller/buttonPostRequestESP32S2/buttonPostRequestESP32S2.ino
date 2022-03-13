@@ -24,7 +24,7 @@ void setup() {
   }
     
   // Wifi Information
-  wifiMulti.addAP("ServerMGMT", "foosballchamp2");
+  wifiMulti.addAP("wifi_name", "wifi_password");
 
   // Setup button pin
   pinMode(buttonPin, INPUT);
