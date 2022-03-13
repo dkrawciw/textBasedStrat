@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 app.post('/addMoneyTest', (req, res) => {
     let playerInformation = getJson("playerInformation.json");
     playerInformation.money++;
-    modifyJson("playerInformation.json", JSON.stringify(playerInformation));
+    modifyFile("playerInformation.json", JSON.stringify(playerInformation));
     res.redirect('/');
 });
 
