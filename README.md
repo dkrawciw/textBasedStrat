@@ -1,2 +1,2 @@
 # textBasedStrat
-Text based strategy that hopefully has some internet component.
+Text based strategy that has some internet component.
