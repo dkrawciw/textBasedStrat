@@ -1,7 +1,1 @@
-{
-    "name": "Epic Country",
-    "playerName": "Daniel Krawciw",
-    "money": 0,
-    "production": 0,
-    "land": [{}]
-}
+{"name":"Epic Country","playerName":"Daniel Krawciw","money":47,"production":0,"land":[{}]}
