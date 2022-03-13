@@ -1,8 +1,7 @@
 import json
+import requests
 
-with open("gameSetup.json", 'r') as worldInformation:
-    worldInfo = json.load(worldInformation)
-with open("playerInformation.json", "r") as playerInformation:
-    playerInfo = json.load(playerInformation)
+print(f'Welcome, player!')
 
-print(f'Welcome, {playerInfo["playerName"]}!')
+#x = requests.get('http://127.0.0.1:8080/')
+r = requests.post("http://127.0.0.1:8080/addMoneyTest")
