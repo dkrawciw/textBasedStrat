@@ -37,8 +37,14 @@ app.post('/addMoneyTest', (req, res) => {
 //Retrieve the guest list
 // Add a person to the guest list
 app.post('/addGuestList', (req, res) => {
+    let dateTime = new Date();
     let currGuestList = getTxtFile("guestList.txt");
-    currGuestList += req.body["name"] + "\n";
+    
+    const currHour = dateTime.getHours(),
+          currMinute = dateTime.getMinutes(),
+          currSeconds = dateTime.getSeconds();
+    
+    currGuestList += req.body["name"] + "\n" + dateTime.getMonth() + "-" + dateTime.getDate() + "-" + dateTime.getFullYear() + " " + currHour + ":" + currMinute + ":" + currSeconds + "\n";
     modifyFile("guestList.txt", currGuestList);
     res.redirect('/');
 })
