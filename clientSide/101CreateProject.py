@@ -1,7 +1,9 @@
 import requests
+server = "http://127.0.0.1"
+
 
 while True:
-    currGuestList = requests.get("http://ec2-34-224-26-92.compute-1.amazonaws.com/guestList.txt").text
+    currGuestList = requests.get(server + "/getGuestList").text
     print("Here is my current guest:")
 
     currGuestList = currGuestList.split('\n')
@@ -18,4 +20,4 @@ while True:
     if ans.upper() == "Q":
         break
 
-    r = requests.post("http://ec2-34-224-26-92.compute-1.amazonaws.com/addGuestList", data={"name": ans})
+    r = requests.post(server + "/addGuestList", data={"name": ans})
