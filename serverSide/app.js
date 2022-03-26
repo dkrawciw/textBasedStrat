@@ -26,6 +26,12 @@ app.get('/', (req, res) => {
     res.send("Si Senor");
 });
 
+// Serve the guest text file via a directory
+app.get('/getGuestList', (req, res) => {
+    let guestList = getTxtFile("guestList.txt");
+    res.send(guestList);
+});
+
 // Send a modification request to the server
 app.post('/addMoneyTest', (req, res) => {
     let playerInformation = getJson("playerInformation.json");
@@ -53,6 +59,6 @@ app.get('*', (req, res) => {
     res.redirect("/");
 });
 
-app.listen(8080, () => {
+app.listen(80, () => {
     console.log("Server Up 'n Running!");
 });

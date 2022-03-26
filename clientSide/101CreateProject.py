@@ -1,7 +1,9 @@
 import requests
+server = "http://127.0.0.1"
+
 
 while True:
-    currGuestList = requests.get("http://127.0.0.1:8080/guestList.txt").text
+    currGuestList = requests.get(server + "/getGuestList").text
     print("Here is my current guest:")
 
     currGuestList = currGuestList.split('\n')
@@ -18,4 +20,4 @@ while True:
     if ans.upper() == "Q":
         break
 
-    r = requests.post("http://127.0.0.1:8080/addGuestList", data={"name": ans})
+    r = requests.post(server + "/addGuestList", data={"name": ans})
