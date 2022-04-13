@@ -1,5 +1,5 @@
 from tkinter import Frame, Label
-import create101Internet as c101i
+from create101Internet import Create101InternetAccess
 
 class PreviousEntriesFrame(Frame):
     def __init__(self, container, hostname):
@@ -11,7 +11,7 @@ class PreviousEntriesFrame(Frame):
         for childWidget in self.winfo_children():
             childWidget.destroy()
 
-        entryList = c101i.Create101InternetAccess.getListOfEntries(self.hostname)
+        entryList = Create101InternetAccess.getListOfEntries(self.hostname)
         for entry in entryList:
             label = Label(self, text=entry[0] + " : " + entry[1])
             label.pack(ipadx=10, ipady=10)
@@ -21,5 +21,5 @@ class PreviousEntriesFrame(Frame):
     def pushEntry(self, name):
         if len(name) == 0:
             return
-        c101i.Create101InternetAccess.addToListOfEntries(self.hostname, name)
+        Create101InternetAccess.addToListOfEntries(self.hostname, name)
         self.loadEntries()
