@@ -58,6 +58,7 @@ app.post('/addGuestList', (req, res) => {
 // Drop all of the data in the guestList Manually
 app.get('/dropGuestList', (req, res) => {
     modifyFile("guestList.txt", "");
+    res.redirect("/getGuestList");
 })
 
 app.get('*', (req, res) => {
