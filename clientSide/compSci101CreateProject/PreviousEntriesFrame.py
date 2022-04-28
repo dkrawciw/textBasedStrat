@@ -15,11 +15,11 @@ class PreviousEntriesFrame(Frame):
         self.columnconfigure(0, weight=1)
         self.columnconfigure(1, weight=8)
 
-        for entry in range(len(entryList)):
-            name = Label(self, text=entryList[entry][0])
+        for entry in range(len(entryList[-5::])):
+            name = Label(self, text=entryList[entry-5][0])
             name.grid(column=0, row=entry, sticky=W, padx=5, pady=5)
 
-            date = Label(self, text=entryList[entry][1])
+            date = Label(self, text=entryList[entry-5][1])
             date.grid(column=1, row=entry, sticky=E, padx=5, pady=5)
         
         self.pack()

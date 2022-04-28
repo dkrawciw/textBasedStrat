@@ -40,7 +40,7 @@ app.post('/addMoneyTest', (req, res) => {
     res.redirect('/');
 });
 
-//Retrieve the guest list
+// Retrieve the guest list
 // Add a person to the guest list
 app.post('/addGuestList', (req, res) => {
     let dateTime = new Date();
@@ -53,6 +53,11 @@ app.post('/addGuestList', (req, res) => {
     currGuestList += req.body["name"] + "\n" + dateTime.getMonth() + "-" + dateTime.getDate() + "-" + dateTime.getFullYear() + " " + currHour + ":" + currMinute + ":" + currSeconds + "\n";
     modifyFile("guestList.txt", currGuestList);
     res.redirect('/');
+})
+
+// Drop all of the data in the guestList Manually
+app.get('/dropGuestList', (req, res) => {
+    modifyFile("guestList.txt", "");
 })
 
 app.get('*', (req, res) => {
