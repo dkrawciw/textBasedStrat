@@ -5,7 +5,7 @@ class CreateProjectGui(Tk):
     def __init__(self):
         super().__init__()
 
-        self.geometry('1600x900')
+        self.geometry('600x400')
         self.title('Guest List - CSCI 101')
 
         # Print all of the previous users to the screen
@@ -22,6 +22,7 @@ class CreateProjectGui(Tk):
         # Handling the button and the button press
         def userPushedButton():
             entryFrame.pushEntry(nameInp.get())
+            nameInp.set("")
 
         btn = Button(nameEntryFrame, text="Sign the List!", command=userPushedButton)
         btn.pack(ipadx=10,ipady=10, expand=True, fill='both')
