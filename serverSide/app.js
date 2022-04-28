@@ -43,7 +43,7 @@ app.post('/addMoneyTest', (req, res) => {
 // Retrieve the guest list
 // Add a person to the guest list
 app.post('/addGuestList', (req, res) => {
-    let dateTime = new Date().toLocaleString('en-US', {timeZone: 'America/Denver'});
+    let dateTime = new Date();
     let currGuestList = getTxtFile("guestList.txt");
     
     const currHour = dateTime.getHours(),
