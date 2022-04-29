@@ -23,7 +23,7 @@ let getJson = (fileName) => {
 
 // Actual web requests
 app.get('/', (req, res) => {
-    res.send("Si Senor");
+    res.send("Hello, world!");
 });
 
 // Serve the guest text file via a directory
@@ -45,12 +45,8 @@ app.post('/addMoneyTest', (req, res) => {
 app.post('/addGuestList', (req, res) => {
     let dateTime = new Date();
     let currGuestList = getTxtFile("guestList.txt");
-    
-    const currHour = dateTime.getHours(),
-          currMinute = dateTime.getMinutes(),
-          currSeconds = dateTime.getSeconds();
-    
-    currGuestList += req.body["name"] + "\n" + dateTime.getMonth() + 1 + "-" + dateTime.getDate() + "-" + dateTime.getFullYear() + " " + currHour + ":" + currMinute + ":" + currSeconds + "\n";
+
+    currGuestList += req.body["name"] + "\n" + (dateTime.getMonth() + 1) + "-" + dateTime.getDate() + "-" + dateTime.getFullYear() + "\n";
     modifyFile("guestList.txt", currGuestList);
     res.redirect('/');
 })
